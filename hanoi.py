@@ -1,15 +1,17 @@
-simple hanoi
 # creating blocks 1,2,3  and stands st1,st2,st3
 
 st1 = [3,2,1]
-fs = st1
+fs = [3,2,1]
+print(fs)
 st2 = []
 st3 = []
 print(st1,st2,st3)
 print("\n\nLARGE BLOCK IS 3\nMEDIUM BLOCK IS 2\nSMALL BLOCK IS 1")
 l =8
 print("\n\n")
+
 #getting block input from user
+
 def blck():
     b=int(input("which block:"))
     if b>3:
@@ -110,6 +112,9 @@ def hanoi(i):
                         hanoi(i)
                     elif st3[ik-1]>b:
                         st3.append(b)
+        i-=1
+        if i == 1:
+            break
         if s==1:
            st1.remove(b)
         elif s==2:
@@ -122,9 +127,6 @@ def hanoi(i):
             break;
         else:
             pass
-        i-=1
-        if i == 1:
-            break
 i=9
 hanoi(i)
 if fs != st3:
